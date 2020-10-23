@@ -21,7 +21,7 @@ console.log(nothing);
 
 let year = 2020;
 let meloYear = year - 2001;
-let derikYear = year - 1987;
+let derikYear = year - 1986;
 let rogerYear = year - 1985;
 
 console.log('A idade do Melo é ' + meloYear + ', do Derik é ' + derikYear + ' e a idade do Roger é ' + rogerYear);
