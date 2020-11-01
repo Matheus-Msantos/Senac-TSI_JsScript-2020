@@ -44,3 +44,26 @@ for (let i = 0; i < dados.length; i++) {
     console.log(dados[i]);
 }
 
+// Class
+
+class nba {
+    constructor(nome, pontos) {
+        this.nome = nome;
+        this.pontos = pontos;
+    }
+
+    media() {
+        let soma = 0;
+        for (let i = 0; i < this.pontos.length; i++) {
+            soma += this.pontos[i];
+        }
+        return soma / this.pontos.length;
+    }
+}
+
+lakers = new nba("Lakers", [89, 120, 103, 100]);
+golden = new nba("Golden State", [97, 105, 110, 99]);
+console.log(lakers);
+console.log(lakers.media());
+console.log(golden);
+console.log(golden.media());
