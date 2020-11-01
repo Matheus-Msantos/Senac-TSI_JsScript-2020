@@ -1,40 +1,43 @@
 let lakers = {
     nome: 'Los Angeles Lakers',
     pontos: [89, 120, 103, 100],
-    media: function () {
-        let soma = 0;
-        for (let i = 0; i < this.pontos.length; i++) {
-            soma += this.pontos[i];
-        }
-        return soma / this.pontos.length;
-    }
 }
 
 let golden = {
     nome: 'Golden State',
     pontos: [97, 105, 110, 99],
-    media: function () {
-        let soma = 0;
-        for (let i = 0; i < this.pontos.length; i++) {
-            soma += this.pontos[i];
-        }
-        return soma / this.pontos.length;
-    }
 }
 
 let cavaliers = {
     nome: 'Cleveland Cavaliers',
     pontos: [90, 117, 108, 89],
-    media: function () {
-        let soma = 0;
-        for (let i = 0; i < this.pontos.length; i++) {
-            soma += this.pontos[i];
+
+}
+
+let nba = {
+    times: [lakers, golden, cavaliers],
+    calculaMedia: function () {
+        for (let i = 0; i < this.times.length; i++) {
+            let timeAtual = this.times[i];
+            let soma = 0;
+            for (let j = 0; j < timeAtual.pontos.length; j++) {
+                soma += timeAtual.pontos[j];
+            }
+            timeAtual.media = soma / timeAtual.pontos.length;
         }
-        return soma / this.pontos.length;
+    },
+    timeVencedor: function () {
+        let vencedor = this.times[0];
+        for (let i = 1; i < this.times.length; i++) {
+            if (vencedor.media < this.times[i].media) {
+                vencedor = this.times[i];
+            }
+        }
+        console.log('O vencedor é o ' + vencedor.nome);
     }
 }
 
+nba.calculaMedia();
+console.log(nba.times);
+nba.timeVencedor();
 
-console.log(lakers.media());
-console.log(golden.media());
-console.log(cavaliers.media());
